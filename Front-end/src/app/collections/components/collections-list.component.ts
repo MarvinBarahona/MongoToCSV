@@ -1,6 +1,13 @@
+/*
+  // File name: /collections/components/collection-list.component.ts
+  // Objective: Display a menu with all the collections.
+*/
+
+// Core imports
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+// Services imports.
 import { CollectionsService, Collection } from './../services';
 
 @Component({
@@ -16,6 +23,7 @@ export class CollectionsListComponent implements OnInit {
     private collectionsService: CollectionsService
   ) {}
 
+  // This functions is called when the components begins to render. 
   ngOnInit(): void {
     // Calls the service
     this.collectionsService.getCollections().subscribe(

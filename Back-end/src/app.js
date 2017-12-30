@@ -1,6 +1,6 @@
 /*
-  File name: app.js
-  Objective: Main file for the app.
+  // File name: app.js
+  // Objective: Main file for the app.
 */
 
 // Require:
@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 // Sets the port.
 let port = process.env.PORT || '4000';
 
-// Starts the server. 
+// Starts the server.
 app.listen(port, ()=>{
   console.log("Server starded...");
 });

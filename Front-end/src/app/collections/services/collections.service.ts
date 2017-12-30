@@ -1,9 +1,18 @@
+/*
+  // File name: /collections/services/collections.service.ts
+  // Objective: Communicates with the back end server.
+*/
+
+// Core imports.
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+
+// Gets the enviroment.
 import { environment } from './../../../environments/environment';
 
+// Classes imports.
 import { Collection } from './';
 
 @Injectable()
@@ -11,6 +20,8 @@ export class CollectionsService {
   baseUrl: string;
   headers: Headers;
 
+  // Function: constructor
+  // Objective: Sets the common variables.
   constructor(private http: Http) {
     this.baseUrl = environment.apiURL;
     this.headers = new Headers({ 'Content-Type': 'application/json', });
