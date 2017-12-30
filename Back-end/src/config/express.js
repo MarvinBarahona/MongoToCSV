@@ -16,7 +16,7 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Authorization, Accept");
   res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
   if ('OPTIONS' == req.method) {
-      res.send(200);
+      res.sendStatus(200);
     }
     else {
       next();
@@ -46,5 +46,5 @@ app.use((err, req, res, next) => {
 
 })
 
-// Export the express object. 
+// Export the express object.
 module.exports = app;
