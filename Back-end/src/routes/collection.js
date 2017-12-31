@@ -12,6 +12,7 @@ const router = express.Router();
 
 // Addsthe routes to the router object.
 router.get("/", collectionController.list);
+router.get("/:collection", collectionController.get);
 
 // Exports the router object.
 module.exports = router;

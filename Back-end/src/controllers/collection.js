@@ -39,5 +39,26 @@ function list(request, response, next) {
   });
 }
 
-// Exports all the functions to be use in the routes. 
-module.exports = {list};
+// Function: list
+// Gets all the collections metadata.
+function get(request, response, next) {
+
+  // Connects with the server.
+  mongo.connect(db_url(), function(err, conn){
+    // If there isn't errors.
+    if(!err){
+      // Set the database to be use.
+      let myDB = conn.db(db_name());
+
+      // Sends the content of the collection
+      myDB.collection(request.params.collection).find({}).toArray(function(err, content){
+        // Sends the response and closes the connection.
+        response.status(200).json(content);
+        conn.close();
+      });
+    }
+  });
+}
+
+// Exports all the functions to be use in the routes.
+module.exports = {list, get};
