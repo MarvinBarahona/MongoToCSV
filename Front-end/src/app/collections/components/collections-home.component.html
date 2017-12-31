@@ -1,1 +1,18 @@
-<collections-list></collections-list>
+<!-- Side nav -->
+<ul id="slide-out" class="side-nav fixed">
+  <li *ngIf="!collections">Loading...</li>
+  <li *ngFor="let collection of collections">
+    <a>{{collection.name}}</a>
+  </li>
+</ul>
+<!-- /Side nav -->
+
+<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+
+<main>
+  <div class="row">
+    <div class="col l6 m8 offset-m2 s12">
+      <collection-show></collection-show>
+    </div>
+  </div>
+</main>

@@ -14,7 +14,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaterializeModule } from 'angular2-materialize';
 
 // This module imports.
-import { CollectionsListComponent } from './components/';
+import { CollectionShowComponent } from './components/';
 import { CollectionsHomeComponent } from './components/';
 import { CollectionsService } from './services/';
 
@@ -35,7 +35,7 @@ const collectionRoutes: Routes = [
     RouterModule.forChild(collectionRoutes)
   ],
   declarations: [
-    CollectionsListComponent,
+    CollectionShowComponent,
     CollectionsHomeComponent
   ],
   providers: [CollectionsService]

@@ -1,2 +1,2 @@
-export { CollectionsListComponent } from './collections-list.component';
+export { CollectionShowComponent } from './collection-show.component';
 export { CollectionsHomeComponent } from './collections-home.component';
