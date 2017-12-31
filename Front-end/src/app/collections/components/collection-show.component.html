@@ -1,1 +1,9 @@
-<p>{{message}}</p>
+<h4 class="center">Content section</h4>
+
+<p *ngIf="!content">{{message}}</p>
+
+<div *ngIf="content">
+  <p><strong>The content of the collection is: </strong></p>
+  <pre>{{content=='loading'?"Loading...":prettyPrint(content)}}</pre>
+
+</div>

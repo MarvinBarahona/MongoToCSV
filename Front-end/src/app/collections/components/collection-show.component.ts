@@ -4,7 +4,7 @@
 */
 
 // Core imports
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
   templateUrl: './collection-show.component.html',
   styleUrls: []
 })
-export class CollectionShowComponent implements OnInit {
+export class CollectionShowComponent{
+  @Input() content: any;
   message: string;
 
   constructor(
@@ -21,8 +22,10 @@ export class CollectionShowComponent implements OnInit {
     this.message = "Select a collection on the menu";
   }
 
-  // This functions is called when the components begins to render.
-  ngOnInit(): void {
-    
+  // Function: prettyPrint
+  // Objective: Converts the JSON to pretty format. 
+  prettyPrint(content: string){
+    let prettyJSON = JSON.stringify(this.content, null, 2);
+    return prettyJSON;
   }
 }

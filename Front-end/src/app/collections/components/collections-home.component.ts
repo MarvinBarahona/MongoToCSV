@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 // Services imports.
 import { CollectionsService, Collection } from './../services';
 
-declare var $: any; 
+declare var $: any;
 
 @Component({
   templateUrl: './collections-home.component.html',
@@ -18,6 +18,7 @@ declare var $: any;
 })
 export class CollectionsHomeComponent implements OnInit {
   collections: Collection[];
+  content: any;
 
   constructor(
     private router: Router,
@@ -37,6 +38,16 @@ export class CollectionsHomeComponent implements OnInit {
     this.collectionsService.getCollections().subscribe(
       collections => {
         this.collections = collections;
+      }
+    );
+  }
+
+  getContent(collection): any{
+    this.content = "loading"; 
+    // Calls the service
+    this.collectionsService.getCollectionContent(collection).subscribe(
+      content => {
+        this.content = content;
       }
     );
   }

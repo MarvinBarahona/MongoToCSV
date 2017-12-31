@@ -2,7 +2,7 @@
 <ul id="slide-out" class="side-nav fixed">
   <li *ngIf="!collections">Loading...</li>
   <li *ngFor="let collection of collections">
-    <a>{{collection.name}}</a>
+    <a (click)="getContent(collection.name)">{{collection.name}}</a>
   </li>
 </ul>
 <!-- /Side nav -->
@@ -12,7 +12,7 @@
 <main>
   <div class="row">
     <div class="col l6 m8 offset-m2 s12">
-      <collection-show></collection-show>
+      <collection-show [content]="content"></collection-show>
     </div>
   </div>
 </main>

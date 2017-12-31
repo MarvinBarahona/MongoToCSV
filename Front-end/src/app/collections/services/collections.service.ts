@@ -39,4 +39,17 @@ export class CollectionsService {
       }
     );
   }
+
+  // Function: getCollectionContent
+  // Objective: Gets the content of one collection. 
+  getCollectionContent(collection: string): Observable<any> {
+    let url = this.baseUrl + '/collections/' + collection;
+
+    // Calls the service.
+    return this.http.get(url, { headers: this.headers }).map(
+      (response: Response) => {
+        return response.json();
+      }
+    );
+  }
 }
