@@ -1,0 +1,7 @@
+<h4 class="center">To CSV Section</h4>
+
+<p *ngIf="!content">{{message}}</p>
+
+<div *ngIf="content">
+  <button type="button" class="btn" name="button" (click)="collectionToCSV()">Download CSV</button>
+</div>

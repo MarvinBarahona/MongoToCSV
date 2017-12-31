@@ -19,6 +19,7 @@ declare var $: any;
 export class CollectionsHomeComponent implements OnInit {
   collections: Collection[];
   content: any;
+  collection: string;
 
   constructor(
     private router: Router,
@@ -43,7 +44,8 @@ export class CollectionsHomeComponent implements OnInit {
   }
 
   getContent(collection): any{
-    this.content = "loading"; 
+    this.content = "loading";
+    this.collection = collection; 
     // Calls the service
     this.collectionsService.getCollectionContent(collection).subscribe(
       content => {

@@ -16,6 +16,7 @@ import { MaterializeModule } from 'angular2-materialize';
 // This module imports.
 import { CollectionShowComponent } from './components/';
 import { CollectionsHomeComponent } from './components/';
+import { CollectionToCSVComponent } from './components/';
 import { CollectionsService } from './services/';
 
 // The routes for this module.
@@ -36,6 +37,7 @@ const collectionRoutes: Routes = [
   ],
   declarations: [
     CollectionShowComponent,
+    CollectionToCSVComponent,
     CollectionsHomeComponent
   ],
   providers: [CollectionsService]

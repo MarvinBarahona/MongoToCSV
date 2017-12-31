@@ -5,7 +5,6 @@
 
 // Core imports
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'collection-show',
@@ -14,16 +13,15 @@ import { Router } from '@angular/router';
 })
 export class CollectionShowComponent{
   @Input() content: any;
+  @Input() collection: string;
   message: string;
 
-  constructor(
-    private router: Router
-  ) {
+  constructor() {
     this.message = "Select a collection on the menu";
   }
 
   // Function: prettyPrint
-  // Objective: Converts the JSON to pretty format. 
+  // Objective: Converts the JSON to pretty format.
   prettyPrint(content: string){
     let prettyJSON = JSON.stringify(this.content, null, 2);
     return prettyJSON;

@@ -12,7 +12,10 @@
 <main>
   <div class="row">
     <div class="col l6 m8 offset-m2 s12">
-      <collection-show [content]="content"></collection-show>
+      <collection-show [collection]="collection" [content]="content"></collection-show>
+    </div>
+    <div class="col l6 m8 offset-m2 s12">
+      <collection-to-csv [collection]="collection" [content]="content"></collection-to-csv>
     </div>
   </div>
 </main>
