@@ -9,13 +9,13 @@ const mongo = require('mongodb').MongoClient;
 // Function: db_url()
 // Returns the database URL.
 function db_url(){
-  return process.env.DB_URL;
+  return process.env.DB_URL || 'mongodb://marvin:12345@avalogics-test-shard-00-00-zvnsf.mongodb.net:27017,avalogics-test-shard-00-01-zvnsf.mongodb.net:27017,avalogics-test-shard-00-02-zvnsf.mongodb.net:27017/test?ssl=true&replicaSet=Avalogics-test-shard-0&authSource=admin';
 }
 
 // Function: db_name()
 // Returns the database name.
 function db_name(){
-  return process.env.DB_NAME;
+  return process.env.DB_NAME || 'test';
 }
 
 // Function: list
