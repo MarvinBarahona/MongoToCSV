@@ -6,28 +6,18 @@
 // Require:
 const mongo = require('mongodb').MongoClient;
 
-// Function: db_url()
-// Returns the database URL.
-function db_url(){
-  return process.env.DB_URL || 'mongodb://marvin:12345@avalogics-test-shard-00-00-zvnsf.mongodb.net:27017,avalogics-test-shard-00-01-zvnsf.mongodb.net:27017,avalogics-test-shard-00-02-zvnsf.mongodb.net:27017/test?ssl=true&replicaSet=Avalogics-test-shard-0&authSource=admin';
-}
-
-// Function: db_name()
-// Returns the database name.
-function db_name(){
-  return process.env.DB_NAME || 'test';
-}
-
 // Function: list
 // Gets all the collections metadata.
 function list(request, response, next) {
+  let db_url = request.body.db_url || process.env.DB_URL;
+  let db_name = request.body.db_name || process.env.DB_NAME;
 
   // Connects with the server.
-  mongo.connect(db_url(), function(err, conn){
+  mongo.connect(db_url, function(err, conn){
     // If there isn't errors.
     if(!err){
       // Set the database to be use.
-      let myDB = conn.db(db_name());
+      let myDB = conn.db(db_name);
 
       // Gets all the collections.
       myDB.listCollections().toArray(function(err, collections){
@@ -42,13 +32,15 @@ function list(request, response, next) {
 // Function: list
 // Gets all the collections metadata.
 function get(request, response, next) {
+  let db_url = request.body.db_url || db_url();
+  let db_name = request.body.db_name || db_name();
 
   // Connects with the server.
-  mongo.connect(db_url(), function(err, conn){
+  mongo.connect(db_url, function(err, conn){
     // If there isn't errors.
     if(!err){
       // Set the database to be use.
-      let myDB = conn.db(db_name());
+      let myDB = conn.db(db_name);
 
       // Sends the content of the collection
       myDB.collection(request.params.collection).find({}).toArray(function(err, content){

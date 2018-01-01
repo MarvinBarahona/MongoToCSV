@@ -11,8 +11,8 @@ const collectionController = require('../controllers/collection');
 const router = express.Router();
 
 // Addsthe routes to the router object.
-router.get("/", collectionController.list);
-router.get("/:collection", collectionController.get);
+router.post("/", collectionController.list);
+router.post("/:collection", collectionController.get);
 
 // Exports the router object.
 module.exports = router;
