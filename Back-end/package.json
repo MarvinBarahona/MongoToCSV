@@ -1,5 +1,5 @@
 {
-  "name": "Avalogics-Dump-Mongo-CSV",
+  "name": "Mongo-CSV",
   "version": "0.0.1",
   "description": "Dumps all the tables of a Mongo DB in CSV files",
   "main": "app.js",

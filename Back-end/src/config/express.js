@@ -34,7 +34,6 @@ app.use('/', routes);
 
 //Handle all error types
 app.use((err, req, res, next) => {
-  req.log.error(err.errors);
   switch(err.constructor){
 
     //Put here the error types.

@@ -7,8 +7,26 @@
 </ul>
 <!-- /Side nav -->
 
-<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+<!-- Navbar -->
+<div class="navbar-fixed">
+  <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+    <div class="nav-content">
+      <div class="left">
+        <p><strong>Connection URL: </strong>{{getDBURL()}}</p>
+        <p><strong>Database name: </strong>{{getDBName()}}</p>
+      </div>
+      <div class="right">
+        <button type="button" name="button" class="btn" (click)="openModal()">Set params</button>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- /Navbar -->
 
+<!-- Main -->
 <main>
   <div class="row">
     <div class="col l6 m8 offset-m2 s12">
@@ -19,3 +37,32 @@
     </div>
   </div>
 </main>
+<!-- /Main -->
+
+<!-- Set params modal -->
+<div class="modal modal-fixed-footer" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modal">
+  <div class="modal-content">
+    <h5>Set the connection parameters: </h5><br>
+
+    <!-- Form -->
+    <div class="row">
+      <div class="input-field col m5 offset-m1 s12">
+        <input name="url" [(ngModel)]="db_url" type="text">
+        <label for="url">Connection URL</label>
+      </div>
+      <div class="input-field col m5 offset-m1 s12">
+        <input name="name" [(ngModel)]="db_name" type="text">
+        <label for="name">Database name</label>
+      </div>
+    </div>
+    <!-- /Form -->
+
+  </div>
+  <div class="modal-footer">
+    <!-- Actions -->
+    <a class="btn" (click)="setParams()">Connect</a>
+    <a class="btn" (click)="closeModal()">Cancel</a>
+    <a class="btn" (click)="demo()">Demo</a>
+  </div>
+</div>
+<!-- Set params modal -->

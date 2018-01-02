@@ -29,11 +29,17 @@ export class CollectionsService {
 
   // Function: getCollections
   // Objective: Gets all the collections.
-  getCollections(): Observable<Collection[]> {
+  getCollections(db_url: string, db_name: string): Observable<Collection[]> {
     let url = this.baseUrl + '/collections';
+    let body = {};
+
+    // If the connections params are set, sends it.
+    if(db_url){
+      body = {db_url: db_url, db_name: db_name};
+    }
 
     // Calls the service.
-    return this.http.get(url, { headers: this.headers }).map(
+    return this.http.post(url, body, { headers: this.headers }).map(
       (response: Response) => {
         return response.json();
       }
@@ -41,12 +47,18 @@ export class CollectionsService {
   }
 
   // Function: getCollectionContent
-  // Objective: Gets the content of one collection. 
-  getCollectionContent(collection: string): Observable<any> {
+  // Objective: Gets the content of one collection.
+  getCollectionContent(db_url: string, db_name: string, collection: string): Observable<any> {
     let url = this.baseUrl + '/collections/' + collection;
+    let body = {};
+
+    // If the connections params are set, sends it.
+    if(db_url){
+      body = {db_url: db_url, db_name: db_name};
+    }
 
     // Calls the service.
-    return this.http.get(url, { headers: this.headers }).map(
+    return this.http.post(url, body, { headers: this.headers }).map(
       (response: Response) => {
         return response.json();
       }

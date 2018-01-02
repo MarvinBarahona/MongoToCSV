@@ -32,8 +32,8 @@ function list(request, response, next) {
 // Function: list
 // Gets all the collections metadata.
 function get(request, response, next) {
-  let db_url = request.body.db_url || db_url();
-  let db_name = request.body.db_name || db_name();
+  let db_url = request.body.db_url || process.env.DB_URL;
+  let db_name = request.body.db_name || process.env.DB_NAME;
 
   // Connects with the server.
   mongo.connect(db_url, function(err, conn){
