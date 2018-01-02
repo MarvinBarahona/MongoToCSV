@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+nav{
+  background-color: #439E39;
+}
+
+button{
+  background-color: #47947D !important;
+}
+
+#slide-out{
+  background-color: #BFF9C8;
+}
+
+#slide-out a{
+  color: #163F32;
+}
+
+#slide-out li{
+  border-bottom-style: solid;
+  border-bottom-color: #439E39;
+  border-bottom-width: thin;
+}
+
+body{
+  background-color: #B5D7B9;
+  color: #083C0E;
+}

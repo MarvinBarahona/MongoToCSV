@@ -2,37 +2,41 @@ header, main, footer {
   padding-left: 300px;
 }
 
-.side-nav{
+.side-nav {
   margin-top: 81px;
 }
 
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width: 992px) {
   header, main, footer {
     padding-left: 0;
   }
-
-  .side-nav{
+  .side-nav {
     margin-top: 0;
   }
 }
 
-.side-nav a{
+.side-nav a {
   cursor: pointer;
 }
 
-.nav-wrapper{
+.nav-wrapper {
   min-height: auto !important;
 }
 
-.navbar-fixed{
+.navbar-fixed {
   margin-bottom: 50px;
 }
 
-.nav-content{
+.nav-content {
   padding-left: 20px;
 }
 
-.nav-content button{
+.nav-content button {
   margin-right: 20px;
   margin-top: 22px;
+}
+
+.modal {
+  height: 375px;
+  width: 700px;
 }
