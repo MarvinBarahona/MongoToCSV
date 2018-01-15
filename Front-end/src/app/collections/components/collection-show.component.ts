@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'collection-show',
   templateUrl: './collection-show.component.html',
-  styleUrls: []
+  styleUrls: ['./collection-show.component.css']
 })
 export class CollectionShowComponent{
   @Input() content: any;

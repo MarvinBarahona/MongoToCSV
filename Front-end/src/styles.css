@@ -24,3 +24,24 @@ body{
   background-color: #B5D7B9;
   color: #083C0E;
 }
+
+/* This code should be in collection-show.component.css*/
+.string {
+  color: green;
+}
+
+.number {
+  color: darkorange;
+}
+
+.boolean {
+  color: blue;
+}
+
+.null {
+  color: magenta;
+}
+
+.key {
+  color: red;
+}

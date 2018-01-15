@@ -2,8 +2,9 @@
 
 <p *ngIf="!content">{{message}}</p>
 
-<div *ngIf="content">
+<div class="content" *ngIf="content">
   <p><strong>The content of the {{collection}} collection is: </strong></p>
-  <pre>{{content=='loading'?"Loading...":prettyPrint(content)}}</pre>
+  <p *ngIf="content == 'loading'">Loading...</p>
+  <pre *ngIf="content != 'loading'" [innerHtml]="content|prettyjson"></pre>
 
 </div>

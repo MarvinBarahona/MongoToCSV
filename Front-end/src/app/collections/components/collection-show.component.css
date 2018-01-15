@@ -1,0 +1,27 @@
+.content pre {
+  max-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+/* Here should be this code */
+
+/*.string {
+  color: green;
+}
+
+.number {
+  color: darkorange;
+}
+
+.boolean {
+  color: blue;
+}
+
+.null {
+  color: magenta;
+}
+
+.key {
+  color: red;
+}*/

@@ -12,6 +12,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 // Third's package imports.
 import { MaterializeModule } from 'angular2-materialize';
+import { PrettyJsonModule } from 'angular2-prettyjson';
 
 // This module imports.
 import { CollectionShowComponent } from './components/';
@@ -33,6 +34,7 @@ const collectionRoutes: Routes = [
     HttpModule,
     FormsModule,
     MaterializeModule,
+    PrettyJsonModule,
     RouterModule.forChild(collectionRoutes)
   ],
   declarations: [
